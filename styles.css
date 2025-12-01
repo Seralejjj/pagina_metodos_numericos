@@ -1,0 +1,251 @@
+/* --- Variables de Color y Tipografía Futurista (MODO PLOMO PASTEL) --- */
+:root {
+    --primary-neon: #0077FF; /* Azul Neón, un poco más suave y profundo para el pastel */
+    --secondary-neon: #004C99; /* Sombra del Neón */
+    --background-pastel: #EAEFF2; /* Gris Azulado muy suave (Fondo principal - "Plomo Pastel") */
+    --background-card: #FFFFFF; /* Blanco (Fondo de Tarjetas) */
+    --background-element: #F8F8F8; /* Gris muy claro (Fondo de Header/Footer, inputs) */
+    --text-dark: #333333; /* Texto principal oscuro */
+    --text-light-contrast: #000000; /* Texto de máximo contraste (ej. en botón neón) */
+    --error-pastel: #CC3333; /* Rojo pastel/fuerte */
+    --success-pastel: #339933; /* Verde pastel/fuerte */
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto Mono', monospace; /* Fuente de terminal */
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--background-pastel) !important;
+    color: var(--text-dark); /* Texto oscuro en fondo claro */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header --- */
+.custom-header-futurista {
+    background-color: var(--background-element); /* Fondo gris muy claro */
+    border-bottom: 2px solid var(--primary-neon);
+    box-shadow: 0 0 15px rgba(0, 119, 255, 0.4); /* Efecto Neón en el borde, más suave */
+    padding: 25px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-title-futurista {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.2em;
+    color: var(--primary-neon);
+    text-shadow: 0 0 6px rgba(0, 119, 255, 0.6); /* Brillo del título más suave */
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+/* --- Cards (Paneles - Módulos de Interfaz) --- */
+.custom-card-futurista {
+    border: 1px solid var(--secondary-neon);
+    border-radius: 5px;
+    background-color: var(--background-card); /* Fondo de tarjeta blanco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); /* Sombra oscura más suave */
+    transition: all 0.3s ease;
+}
+
+.custom-card-futurista:hover {
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.2); /* Sombra con brillo neón al pasar, más suave */
+    border-color: var(--primary-neon);
+}
+
+.custom-card-header-futurista {
+    background-color: var(--background-element);
+    border-bottom: 1px solid var(--primary-neon);
+    padding: 15px 20px;
+}
+
+.card-title-futurista {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.4em;
+    color: var(--primary-neon);
+    text-shadow: 0 0 4px rgba(0, 119, 255, 0.4);
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+/* --- Labels y Inputs/Selects (Estilo Terminal) --- */
+.custom-label-futurista {
+    font-family: var(--font-body);
+    font-weight: 500;
+    color: var(--text-dark); /* Label oscuro en fondo claro */
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.custom-select-futurista, .custom-input-futurista {
+    border: 1px solid var(--secondary-neon);
+    border-radius: 3px;
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: var(--background-pastel); /* Fondo de input muy claro pastel */
+    color: var(--primary-neon); /* El texto de los inputs/selects sigue siendo neón */
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-select-futurista:focus, .custom-input-futurista:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.6), inset 0 0 3px rgba(0, 119, 255, 0.3); /* Foco con brillo neón más suave */
+    outline: none;
+    background-color: var(--background-card); /* Blanco al enfocar */
+}
+
+/* --- Ecuación Display (Holográfico) --- */
+.custom-equation-display-futurista {
+    background-color: var(--background-element); /* Fondo gris claro */
+    border: 1px dashed var(--secondary-neon) !important;
+    border-radius: 3px !important;
+    padding: 20px !important;
+    font-size: 1.5em !important;
+    color: var(--primary-neon);
+    text-shadow: 0 0 4px rgba(0, 119, 255, 0.6);
+}
+
+/* --- Botón de Ejecutar --- */
+.custom-btn-futurista {
+    background-color: var(--primary-neon) !important;
+    border: none;
+    color: var(--text-light-contrast) !important; /* Texto negro en botón neón */
+    padding: 15px 30px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.4) !important;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn-futurista:hover {
+    background-color: #3399FF !important; /* Azul más claro al hover */
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.7) !important;
+    color: var(--text-light-contrast) !important;
+}
+
+.custom-btn-futurista:active {
+    transform: translateY(0);
+    box-shadow: 0 0 8px rgba(0, 119, 255, 0.2) !important;
+}
+
+/* --- Alertas de Resultado (Mensajes de Consola) --- */
+.custom-alert-info-futurista {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    font-size: 1.05em;
+    font-weight: 500;
+    background-color: var(--background-element); 
+    border: 1px solid var(--secondary-neon);
+    color: var(--text-dark); /* Color de texto general oscuro */
+    text-shadow: none;
+}
+
+.custom-alert-info-futurista strong {
+    color: var(--primary-neon); /* Partes importantes en neón */
+    text-shadow: 0 0 3px rgba(0, 119, 255, 0.5);
+}
+
+/* Estilo de éxito */
+.custom-alert-success {
+    border-left: 5px solid var(--success-pastel) !important;
+    color: var(--success-pastel) !important; 
+    text-shadow: none; 
+}
+
+/* Estilo de error */
+.custom-alert-error-futurista {
+    border-left: 5px solid var(--error-pastel) !important;
+    color: var(--error-pastel) !important; 
+    text-shadow: none;
+}
+
+/* --- Tabla de Resultados (Data Grid) --- */
+#tabla-resultados-container {
+    overflow-x: auto;
+    background-color: var(--background-card);
+    border-radius: 3px;
+    border: 1px solid var(--secondary-neon);
+}
+
+.table {
+    margin-bottom: 0; 
+}
+
+.table thead th {
+    background-color: var(--background-element);
+    color: var(--primary-neon);
+    border-color: var(--secondary-neon);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 12px 10px;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.table tbody tr td {
+    padding: 10px 10px;
+    border-color: #EFEFEF; 
+    vertical-align: middle;
+    font-family: var(--font-body);
+    font-size: 0.85em;
+    color: var(--text-dark); /* Texto de la tabla oscuro */
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: var(--background-pastel); /* Alternar color de fila con el fondo principal */
+}
+
+.table tbody tr:hover {
+    background-color: #DDE5EC; /* Resaltar fila al pasar el ratón con un gris-azul un poco más oscuro */
+}
+
+/* --- Notas --- */
+.nota {
+    font-size: 0.85em;
+    color: var(--text-dark); 
+    margin-top: 10px;
+    padding-left: 5px;
+    opacity: 0.8;
+}
+
+/* --- KaTeX para fórmulas --- */
+.katex {
+    color: var(--primary-neon) !important;
+    text-shadow: 0 0 4px rgba(0, 119, 255, 0.5);
+}
+
+/* --- Footer --- */
+.custom-footer-futurista {
+    background-color: var(--background-element);
+    border-top: 1px solid var(--secondary-neon);
+    color: var(--text-dark); 
+    text-align: center;
+    padding: 15px;
+    margin-top: 60px;
+}
+
+.custom-footer-text-futurista {
+    font-family: var(--font-body);
+    font-size: 0.8em;
+    opacity: 0.8; 
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) {
+    .custom-card-futurista {
+        margin-bottom: 30px;
+    }
+}

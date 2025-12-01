@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío: Raíces de Ecuaciones No Lineales - Futuro Digital</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light-futurista"> 
+
+    <header class="custom-header-futurista">
+        <h1 class="header-title-futurista">🔬 DESAFÍO: Raíces de Ecuaciones No Lineales</h1>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            
+            <div class="col-lg-5 col-md-12">
+                <div class="custom-card-futurista shadow-lg h-100">
+                    <div class="card-header custom-card-header-futurista">
+                        <h2 class="card-title-futurista">:: MÓDULO DE ENTRADA ::</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="mb-4">
+                            <label for="problema" class="form-label custom-label-futurista">Ecuación (F[X]):</label>
+                            <select id="problema" class="form-select custom-select-futurista" onchange="actualizarEcuacion()">
+                                <option value="p1" data-formula="x^3 - e^{0.8x} - 20 = 0" data-fprime="3x^2 - 0.8e^{0.8x}" data-intervalo="[7, 8]">P1: x³ - e⁰·⁸ˣ = 20</option>
+                                <option value="p2" data-formula="3 \sin(0.5x) - 0.5x + 2 = 0" data-fprime="1.5 \cos(0.5x) - 0.5" data-intervalo="[5, 7]">P2: 3sen(0.5x) - 0.5x + 2 = 0</option>
+                                <option value="p3" data-formula="x^3 - x^2 e^{-0.5x} - 3x + 1 = 0" data-fprime="3x^2 - 3 - 2x e^{-0.5x} + 0.5x^2 e^{-0.5x}" data-intervalo="[1, 2]">P3: x³ - x²e⁻⁰·⁵ˣ - 3x = -1</option>
+                                <option value="p4" data-formula="\cos^2(x) - 0.5x e^{0.3x} + 5 = 0" data-fprime="-\sin(2x) - 0.5e^{0.3x} - 0.15x e^{0.3x}" data-intervalo="[3, 4]">P4: cos²(x) - 0.5xe⁰·³ˣ + 5 = 0</option>
+                            </select>
+                        </div>
+                        
+                        <div id="ecuacion-display" class="equation mb-4 p-3 text-center custom-equation-display-futurista">
+                            </div>
+
+                        <div class="mb-4">
+                            <label for="metodo" class="form-label custom-label-futurista">Método de Solución:</label>
+                            <select id="metodo" class="form-select custom-select-futurista" onchange="actualizarInputs()">
+                                <option value="biseccion">1. Bisección</option>
+                                <option value="newton">2. Newton-Raphson</option>
+                                <option value="secante">3. Secante</option>
+                            </select>
+                        </div>
+                        
+                        <div id="inputs-metodo" class="input-container">
+                            </div>
+                        
+                        <div class="mb-5">
+                            <label for="tolerancia" class="form-label custom-label-futurista">Tolerancia Mínima ($\epsilon_r$ en %):</label>
+                            <input type="number" id="tolerancia" class="form-control custom-input-futurista" value="0.0001" step="0.00001" required>
+                        </div>
+                        
+                        <button onclick="ejecutarMetodo()" class="btn custom-btn-futurista w-100 shadow-lg">:: EJECUTAR ALGORITMO ::</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12">
+                <div class="custom-card-futurista shadow-lg h-100">
+                    <div class="card-header custom-card-header-futurista">
+                        <h2 class="card-title-futurista">:: CONSOLA DE SALIDA ::</h2>
+                    </div>
+                    <div class="card-body">
+                        <p id="resultado-raiz" class="custom-alert-info-futurista">Estado: **Sistema en Espera...**</p>
+                        <div id="tabla-resultados-container" class="mt-4">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="custom-footer-futurista">
+        <p class="mb-0 custom-footer-text-futurista">Ticona Llusco Sergio Alejandro</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="metodos.js"></script>
+</body>
+</html>
