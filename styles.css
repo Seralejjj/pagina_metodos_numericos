@@ -249,3 +249,32 @@ body {
         margin-bottom: 30px;
     }
 }
+
+/* --- Nuevo Estilo para el Bloque de Información de la Tarea (AÑADIDO) --- */
+.custom-info-card-futurista {
+    border: 2px solid var(--primary-neon); /* Borde neón más grueso */
+    border-radius: 5px;
+    background-color: var(--background-card); 
+    box-shadow: 0 0 15px rgba(0, 119, 255, 0.5); /* Sombra neón más intensa */
+    padding: 20px;
+}
+
+.info-text-futurista {
+    font-family: var(--font-body);
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+.custom-btn-github-futurista {
+    background-color: var(--secondary-neon) !important;
+    border: 1px solid var(--primary-neon) !important;
+    color: var(--background-card) !important;
+    font-family: var(--font-body);
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-github-futurista:hover {
+    background-color: var(--primary-neon) !important;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.8) !important;
+}
